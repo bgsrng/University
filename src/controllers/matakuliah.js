@@ -87,6 +87,11 @@ const matakuliahControllers = {
       let sqlQuery = `DELETE FROM matakuliah WHERE id = ${matakuliahId}`;
 
       const dbResult = await universityDBQuery(sqlQuery);
+
+      res.status(200).json({
+          message: 'Server error',
+          result: dbResult
+      })
     } catch (err) {
       console.log(err);
       res.status(500).json({
