@@ -3,11 +3,10 @@ const cors = require('cors');
 const { clubRoutes, mahasiswaRoutes, matakuliahRoutes, dosenRoutes, fakultasRoutes } = require('./routes');
 const app = express();
 const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
-
-dotenv.config();
 
 const PORT = process.env.PORT;
 
