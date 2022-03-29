@@ -1,12 +1,12 @@
 const mysql = require('mysql');
-const { MYSQL_USER, MYSQL_PASSWORD, MYSQL_DBNAME, MYSQL_PORT } = require('../configs/db');
+const { mahasiswaDBConfig, matkuliahDBConfig, fakultasDBConfig, clubDBConfig, dosenDBConfig } = require('../configs/db');
 const util = require('util');
 
 const mahasiswaDB = {
-  MYSQL_USER: '',
-  MYSQL_PASSWORD: '',
-  MYSQL_DBNAME: '',
-  MYSQL_PORT: 0,
+  MYSQL_USER: mahasiswaDBConfig.MYSQL_USER,
+  MYSQL_PASSWORD: mahasiswaDBConfig.MYSQL_PASSWORD,
+  MYSQL_DBNAME: mahasiswaDBConfig.MYSQL_DBNAME,
+  MYSQL_PORT: mahasiswaDBConfig.MYSQL_PORT,
 };
 const dosenDB = {
   MYSQL_USER: '',
@@ -32,3 +32,7 @@ const fakultas = {
   MYSQL_DBNAME: '',
   MYSQL_PORT: 0,
 };
+
+const dosenDBQuery = util.promisify(dosen.query).bind(dosenDB);
+
+const mahsiswaDBQuery = util.promisify(mahasiswaDB.query).bind(mahasiswaDB);
