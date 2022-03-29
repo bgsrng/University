@@ -33,6 +33,8 @@ const fakultas = {
   MYSQL_PORT: 0,
 };
 
-const dosenDBQuery = util.promisify(dosen.query).bind(dosenDB);
+const dosenDBQuery = util.promisify(dosendb.query).bind(dosenDB);
 
-const mahsiswaDBQuery = util.promisify(mahasiswaDB.query).bind(mahasiswaDB);
+const mahsiswaDBQuery = util.promisify(mahasiswadb.query).bind(mahasiswaDB);
+
+module.exports = { dosenDBQuery, mahsiswaDBQuery };
