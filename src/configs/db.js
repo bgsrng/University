@@ -1,8 +1,10 @@
+const dotenv = require("dotenv")
+
 const dbConfigs = {
-  MYSQL_USER: 'root',
-  MYSQL_PASSWORD: 'Awashacker',
-  MYSQL_DBNAME: 'university',
-  MYSQL_PORT: 3306,
+  MYSQL_USER: process.env.MYSQL_USER,
+  MYSQL_PASSWORD: process.env.MYSQL_PASSWORD,
+  MYSQL_DBNAME: process.env.MYSQL_DBNAME,
+  MYSQL_PORT: process.env.MYSQL_PORT,
 };
 
 module.exports = { dbConfigs };
