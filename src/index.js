@@ -12,7 +12,7 @@ const PORT = process.env.PORT;
 
 app.use('/', clubRoutes);
 app.use('/', mahasiswaRoutes);
-app.use('/matakuliah', matakuliahRoutes);
+app.use('/', matakuliahRoutes);
 app.use('/', dosenRoutes);
 app.use('/', fakultasRoutes);
 app.use('/', kampusRoutes);
