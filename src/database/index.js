@@ -9,12 +9,12 @@ const mahasiswaDB = {
   MYSQL_PORT: mahasiswaDBConfig.MYSQL_PORT,
 };
 const dosenDB = {
-  MYSQL_USER: '',
+  MYSQL_USER: dosenDBConfig.MYSQL_USER,
   MYSQL_PASSWORD: '',
   MYSQL_DBNAME: '',
   MYSQL_PORT: 0,
 };
-const matkuliah = {
+const matakuliahDB = {
   MYSQL_USER: '',
   MYSQL_PASSWORD: '',
   MYSQL_DBNAME: '',
@@ -26,15 +26,18 @@ const clubDB = {
   MYSQL_DBNAME: '',
   MYSQL_PORT: 0,
 };
-const fakultas = {
+const fakultasDB = {
   MYSQL_USER: '',
   MYSQL_PASSWORD: '',
   MYSQL_DBNAME: '',
   MYSQL_PORT: 0,
 };
 
-const dosenDBQuery = util.promisify(dosendb.query).bind(dosenDB);
+const dosenDBQuery = util.promisify(dosenDB.query).bind(dosenDB);
 
-const mahsiswaDBQuery = util.promisify(mahasiswadb.query).bind(mahasiswaDB);
+const mahasiswaDBQuery = util.promisify(mahasiswaDB.query).bind(mahasiswaDB);
+const matakuliahDBQuery = util.promisify(mahtakuliahDB.query).bind(mahtakuliahDB);
+const fakultasDBQuery = util.promisify(fakultasDB.query).bind(fakultasDB);
+const clubDBQuery = util.promisify(clubDB.query).bind(fakultasDB);
 
-module.exports = { dosenDBQuery, mahsiswaDBQuery };
+module.exports = { dosenDBQuery, mahasiswaDBQuery, matakuliahDBQuery, fakultasDBQuery, clubDBQuery };
